@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxi Dresses</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <nav class="navbar"></nav>
+        <script src="nav.js"></script>
+        <script src="js/home.js"></script>
+        <script src="shared.js"></script>
+
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="maxi-hero.png" alt="Maxi Dresses" class="hero-img">
+        <div class="hero-text">
+            <h1>Maxi Dresses</h1>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="products">
+        <h2>Maxi Dresses</h2>
+        <div class="product-list">
+            <!-- Example Product -->
+            <div class="product-item">
+                <img src="maxi1.png" alt="Product 1" class="product-img">
+                <h3 class="product-name">Maxi Dress 1</h3>
+                <p class="product-price">₹500</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-cart">View Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="maxi2.png" alt="Product 1" class="product-img">
+                <h3 class="product-name">Maxi Dress 2</h3>
+                <p class="product-price">₹600</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-cart">View Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="maxi3.png" alt="Product 1" class="product-img">
+                <h3 class="product-name">Maxi Dress 3</h3>
+                <p class="product-price">₹700</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-cart">View Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="maxi4.png" alt="Product 1" class="product-img">
+                <h3 class="product-name">Maxi Dress 4</h3>
+                <p class="product-price">₹800</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-cart">View Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="maxi5.png" alt="Product 1" class="product-img">
+                <h3 class="product-name">Maxi Dress 5</h3>
+                <p class="product-price">₹900</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-cart">View Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="1.png" alt="Product 1" class="product-img">
+                <h3 class="product-name">Maxi Dress 6</h3>
+                <p class="product-price">₹900</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="view-cart">View Cart</button>
+            </div>
+
+            <!-- Repeat for more products -->
+        </div>
+        <!-- Cart Section -->
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Your Cart</h2>
+        <div id="cart-contents">
+            <ul id="cart-items"></ul>
+            <p id="cart-total">Total: ₹0</p>
+            <button id="checkout-button">Proceed to Checkout</button>
+        </div>
+        <form id="order-form" style="display: none;">
+            <h3>Enter Your Address</h3>
+            <textarea id="address" rows="4" cols="50"></textarea>
+            <h3>Payment Options</h3>
+            <label>
+                <input type="radio" name="payment" value="cod"> Cash on Delivery
+            </label>
+            <br>
+            <button type="button" id="confirm-order-button">Confirm Order</button>
+        </form>
+    </div>
+</div>
+
+<!-- Order Confirmation Modal -->
+<div id="order-confirmation-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-order">&times;</span>
+        <h2>Order Placed</h2>
+        <p>✔ Thanks for ordering! Keep shopping with us.</p>
+    </div>
+</div>
+
+
+
+    </section>
+
+
+    <footer>
+        <div class="footer-content">
+            <img src="logo.png" class="logo" alt="">
+            <div class="footer-ul-container">
+                <ul class="category">
+                    <li class="category-title">men</li>
+                    <li><a href="tshirt.html" class="footer-link">T-shirts</a></li>
+                    <li><a href="shirt.html" class="footer-link">Shirts</a></li>
+                    <li><a href="coat.html" class="footer-link">Coat</a></li>
+                </ul>
+                <ul class="category">
+                    <li class="category-title">women</li>
+                    <li><a href="maxi.html" class="footer-link">Maxi</a></li>
+                    <li><a href="gown.html" class="footer-link">Gown</a></li>
+                    <li><a href="kurti.html" class="footer-link">Kurtis</a></li>
+                </ul>
+                <ul class="category">
+                    <li class="category-title">Kids</li>
+                    <li><a href="kgown.html" class="footer-link">Gown</a></li>
+                    <li><a href="tops.html" class="footer-link">Tops</a></li>
+                    <li><a href="skirt.html" class="footer-link">Skirts</a></li>
+                </ul>
+                <ul class="category">
+                    <li class="category-title">Accesories</li>
+                    <li><a href="shoe.html" class="footer-link">shoes</a></li>
+                    <li><a href="glass.html" class="footer-link">Glasses</a></li>
+                    <li><a href="watch.html" class="footer-link">Watches</a></li>
+                </ul>
+    
+    
+            </div>
+        </div>
+        <p class="footer-title">about company</p>
+            <p class="info">Fasion is the Modern wear store for Men and Women and It Contain the accessoriesfor Men and Women</p>
+            <p class="info">support emails - help@fashion.com, customersupport@fashion.com</p>
+            <p class="info">telephone - 8790543267</p>
+            <div class="footer-social-container">
+                <div>
+                    <a href="#" class="social-link">terms & services</a>
+                    <a href="#" class="social-link">privacy page</a>
+                </div>
+                <div>
+                    <a href="#" class="social-link">instagram</a>
+                    <a href="#" class="social-link">facebook</a>
+                    <a href="#" class="social-link">twitter</a>
+                </div>
+            </div>
+            <p class="footer-credit">Clothing, Best apparels online store</p>
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

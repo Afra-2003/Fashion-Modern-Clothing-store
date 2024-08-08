@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="cart.css"> <!-- Link to the new CSS file -->
+</head>
+<body>
+    <!-- Your header or navbar with cart badge -->
+    <header>
+        <div class="navbar">
+            <!-- Other nav items -->
+            <a href="cart.html">
+                <img src="cart.png" alt="Cart Icon" id="cart-icon">
+                <span id="cart-badge" class="badge">0</span>
+            </a>
+        </div>
+
+        <style>
+            /* Modal Styles */
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* Close Button */
+.close-order-summary {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-order-summary:hover,
+.close-order-summary:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Popup Styles */
+.popup {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: center;
+}
+
+.close-popup {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-popup:hover,
+.close-popup:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* Style for the order summary content */
+.order-summary-details {
+    background-color: #f9f9f9; /* Example background color */
+    border: 1px solid #ddd; /* Example border */
+    padding: 20px; /* Example padding */
+    border-radius: 8px; /* Example rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Example shadow */
+}
+
+.order-summary-details h2 {
+    font-size: 1.5em; /* Example font size for the title */
+    margin-bottom: 10px; /* Example margin */
+}
+
+.order-summary-details h3 {
+    font-size: 1.2em; /* Example font size for sub-titles */
+    margin-top: 10px; /* Example margin */
+    margin-bottom: 5px; /* Example margin */
+}
+
+.order-summary-details ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+}
+
+.order-summary-details ul li {
+    display: flex; /* Flex display for items */
+    align-items: center; /* Center align items */
+    margin-bottom: 10px; /* Margin between items */
+}
+
+.order-summary-details ul li img {
+    width: 50px; /* Example width for images */
+    height: 50px; /* Example height for images */
+    margin-right: 10px; /* Spacing between image and text */
+}
+
+.order-summary-details p {
+    margin: 5px 0; /* Example margin for paragraphs */
+}
+
+
+        </style>
+    </header>
+
+    <main>
+        <section class="cart">
+            <h2>Your Cart</h2>
+            <div id="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <p id="cart-total">Total: $0.00</p> <!-- Default text for total -->
+            <button id="open-cart-modal">Show Cart Summary</button>
+        </section>
+    </main>
+
+    <!-- Modal for checkout or order confirmation -->
+    <div id="cart-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cart Summary</h2>
+            <ul id="cart-items-modal">
+                <!-- Cart items in modal will be dynamically added here -->
+            </ul>
+            <p id="cart-total-modal">Total: $0.00</p> <!-- Default text for total -->
+            <button id="checkout-button-modal">Proceed to Checkout</button>
+        </div>
+    </div>
+
+ 
+
+
+
+    <!--Checkout pop up-->
+   <!-- User Details Modal -->
+<div id="user-details-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close-user-details">&times;</span>
+        <h2>Enter Your Details</h2>
+        <form id="user-details-form">
+            <!-- Example user details fields -->
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+
+            <label for="zip">ZIP Code:</label>
+            <input type="text" id="zip" name="zip" required>
+
+            <h3>Payment Information</h3>
+            <label>
+                <input type="radio" name="payment-method" value="cash-on-delivery" checked>
+                Cash on Delivery
+            </label>
+            <label>
+                <input type="radio" name="payment-method" value="credit-debit-card">
+                Credit/Debit Card
+            </label>
+
+            <div id="credit-debit-card-fields" style="display: block;">
+                <div class="card-input-container">
+                    <div>
+                        <label for="card-number">Credit/Debit Card Number:</label>
+                        <input type="text" id="card-number" name="card-number" placeholder="XXXX XXXX XXXX XXXX">
+                    </div>
+                    <div>
+                        <label for="card-expiry">Expiration Date:</label>
+                        <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/YY">
+                    </div>
+                    <div>
+                        <label for="card-cvv">CVV/CVC:</label>
+                        <input type="text" id="card-cvv" name="card-cvv">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+</div>
+
+    <!-- Order Confirmation Modal -->
+    <div id="order-confirmation-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-order">&times;</span>
+            <h2>Order Confirmation</h2>
+            <p>Your order has been placed successfully!</p>
+            <button id="confirm-order-button">OK</button>
+        </div>
+    </div>
+
+    <!-- Modal Structure -->
+<!-- Modal Structure -->
+<!-- Modal Structure -->
+<!-- Modal Structure -->
+<div id="order-summary-modal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: 1000;">
+    <div class="modal-content" style="position: relative; margin: 10% auto; padding: 20px; width: 90%; max-width: 500px; background-color: #fff; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <span class="close-order-summary" style="position: absolute; top: 10px; right: 15px; font-size: 28px; color: #333; cursor: pointer; transition: color 0.3s ease;">&times;</span>
+        <div id="order-summary-content" style="padding: 20px; max-height: 400px; overflow-y: auto; color: #333; font-family: Arial, sans-serif;">
+            <!-- Order summary content will be injected here -->
+        </div>
+        <button id="confirm-summary-button" style="display: block; width: auto; padding: 8px 16px; background-color: #28a745; color: #fff; border: none; border-radius: 5px; font-size: 14px; cursor: pointer; margin: 20px auto 10px; text-align: center; transition: background-color 0.3s ease;">Confirm</button>
+    </div>
+</div>
+
+
+
+<!-- Message Popup -->
+<div id="order-success-popup" class="popup" style="display: none;">
+    <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <img src="orderplaced.png" alt="order placed" style="width: 100px; height: 100px;  border-radius: 10px;">
+        <p>Order successfully placed and will be delivered in 2-3 business days. Thank you! Come back again.</p>
+        <a href="index.html">Go Back to Shopping</a>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Get modal and popup elements
+        const orderSummaryModal = document.getElementById('order-summary-modal');
+        const confirmButton = document.getElementById('confirm-summary-button');
+        const successPopup = document.getElementById('order-success-popup');
+        const closePopup = document.querySelector('.close-popup');
+        const closeModal = document.querySelector('.close-order-summary');
+
+        // Show the modal (for demonstration)
+        // orderSummaryModal.style.display = 'block';
+
+        // Confirm button click event
+        confirmButton.addEventListener('click', () => {
+            // Hide the modal
+            orderSummaryModal.style.display = 'none';
+            // Show the success popup
+            successPopup.style.display = 'block';
+        });
+
+        // Close popup event
+        closePopup.addEventListener('click', () => {
+            successPopup.style.display = 'none';
+        });
+
+        // Close modal event
+        closeModal.addEventListener('click', () => {
+            orderSummaryModal.style.display = 'none';
+        });
+
+        // Close popup if clicked outside of it
+        window.addEventListener('click', (event) => {
+            if (event.target === successPopup) {
+                successPopup.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+
+
+
+    
+
+    <script src="cart.js"></script>
+    <script src="shared.js"></script>
+</body>
+</html>

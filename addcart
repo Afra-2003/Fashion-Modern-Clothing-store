@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart</title>
+    <script>
+        function addToCart(productId) {
+            // Get the current cart from localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if the product is already in the cart
+            let product = cart.find(item => item.productId === productId);
+
+            if (product) {
+                // If the product is already in the cart, increase the quantity
+                product.quantity++;
+            } else {
+                // If the product is not in the cart, add it
+                cart.push({ productId: productId, quantity: 1 });
+            }
+
+            // Save the updated cart back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            alert('Product added to cart');
+        }
+
+        function viewCart() {
+            // Get the cart from localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            alert('Cart: ' + JSON.stringify(cart));
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.card-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const productId = parseInt(button.getAttribute('data-product-id'));
+                    addToCart(productId);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button class="card-btn" data-product-id="1">Add Product 1 to Cart</button>
+    <button class="card-btn" data-product-id="2">Add Product 2 to Cart</button>
+    <button onclick="viewCart()">View Cart</button>
+</body>
+</html>
