@@ -84,3 +84,57 @@ footer{
     color: #fff;
     background: rgba(0, 0, 0, 0.2);
 }
+/* Media query for mobile devices */
+@media only screen and (max-width: 768px) {
+    footer {
+        padding: 20px 5vw; /* Reduce padding for mobile */
+        padding-bottom: 60px; /* Adjust bottom padding */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Stack footer content vertically */
+        align-items: center;
+    }
+
+    .footer-content .logo {
+        height: 120px; /* Reduce logo size for mobile */
+        margin-bottom: 20px; /* Add spacing below logo */
+    }
+
+    .footer-ul-container {
+        width: 100%; /* Make ul container full width */
+        flex-direction: column; /* Stack categories vertically */
+        align-items: center;
+    }
+
+    .category {
+        width: 100%; /* Make category full width */
+        align-items: center; /* Center align text */
+    }
+
+    .category-title {
+        font-size: 18px; /* Reduce font size */
+        margin-bottom: 15px; /* Adjust margin for better spacing */
+    }
+
+    .footer-title, .info {
+        font-size: 16px; /* Reduce font size */
+        margin: 15px 0; /* Adjust margin for mobile */
+    }
+
+    .footer-social-container {
+        flex-direction: column; /* Stack social links vertically */
+        align-items: center; /* Center align social links */
+        margin-top: 30px; /* Adjust top margin */
+    }
+
+    .social-link {
+        margin: 10px 0; /* Add margin between social links */
+    }
+
+    .footer-credit {
+        position: relative; /* Change position to relative */
+        padding: 15px 5vw; /* Adjust padding for better readability */
+        font-size: 14px; /* Reduce font size */
+    }
+}
