@@ -95,3 +95,52 @@
 .link:hover{
     opacity: 1;
 }
+/* Media query for mobile devices */
+@media only screen and (max-width: 768px) {
+    .nav {
+        padding: 10px 5vw; /* Reduce padding for mobile */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    .brand-logo {
+        height: 50px; /* Adjust the brand logo size */
+        margin-bottom: 10px; /* Add spacing between logo and nav items */
+    }
+
+    .nav-items {
+        width: 100%; /* Full width for mobile */
+        justify-content: space-around; /* Spread out items */
+        margin-bottom: 10px; /* Add some space below nav items */
+    }
+
+    .search {
+        width: 100%; /* Full width search bar */
+        margin-bottom: 10px; /* Space below search bar */
+    }
+
+    .search-box {
+        width: 70%; /* Adjust search box width */
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .search-btn {
+        width: 30%; /* Adjust button width */
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .nav-items a {
+        margin-left: 10px; /* Reduce margin for mobile */
+    }
+
+    .links-container {
+        padding: 10px 5vw; /* Reduce padding */
+        flex-wrap: wrap; /* Allow links to wrap to the next line */
+    }
+
+    .link {
+        padding: 5px; /* Adjust padding for mobile */
+        margin: 5px 0; /* Adjust margin for spacing */
+        font-size: 14px; /* Reduce font size */
+    }
+}
