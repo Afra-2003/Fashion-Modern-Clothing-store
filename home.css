@@ -319,6 +319,95 @@
 .subcategory:hover {
     color: #000;
 }
+/* Media query for mobile devices */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        padding: 10px; /* Reduce padding for mobile */
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Slightly reduce the shadow */
+    }
+
+    .nav-items {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: flex-start;
+        padding: 10px 0; /* Add padding between items */
+    }
+
+    .links-container {
+        flex-direction: column; /* Stack links vertically */
+        padding: 10px 5vw; /* Adjust padding */
+        align-items: center;
+    }
+
+    .link-item {
+        margin: 10px 0; /* Add margin between link items */
+    }
+
+    .dropdown-menu {
+        width: 100%; /* Make dropdown full width */
+        position: relative; /* Adjust position for better display */
+        box-shadow: none; /* Remove shadow for mobile */
+    }
+
+    .dropdown-link {
+        padding: 10px; /* Adjust padding for mobile */
+    }
+
+    .hero-section {
+        height: auto; /* Allow hero section to adjust height */
+        padding: 20px; /* Add padding around the hero section */
+    }
+
+    .hero-section .logo {
+        width: 100%; /* Make the logo responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .product-category {
+        font-size: 24px; /* Reduce font size */
+        padding: 0 5vw; /* Adjust padding */
+    }
+
+    .product-container {
+        padding: 0 5vw; /* Adjust padding */
+    }
+
+    .product-card {
+        width: 80%; /* Increase the width for mobile */
+        height: auto; /* Allow height to adjust */
+        margin-right: 0; /* Remove margin for better alignment */
+        margin-bottom: 20px; /* Add margin for spacing */
+    }
+
+    .product-thumb {
+        height: auto; /* Allow image height to adjust */
+    }
+
+    .card-btn {
+        width: 100%; /* Make button full width */
+        padding: 15px; /* Increase padding for better tap area */
+    }
+
+    .collection-container {
+        grid-template-columns: 1fr; /* Stack collections vertically */
+        grid-gap: 15px; /* Adjust gap between items */
+        padding-left: 10px; /* Adjust padding */
+        padding-right: 10px;
+    }
+
+    .collection-category {
+        font-size: 24px; /* Reduce font size */
+        padding: 0 5vw; /* Adjust padding */
+    }
+
+    .collection img {
+        height: auto; /* Allow image height to adjust */
+    }
+
+    .collection p {
+        font-size: 30px; /* Reduce font size */
+        padding: 10px; /* Add padding for better readability */
+    }
+}
 
 
 
