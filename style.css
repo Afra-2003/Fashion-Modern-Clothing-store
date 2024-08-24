@@ -115,6 +115,57 @@
     text-decoration: none;
     cursor: pointer;
 }
+/* Media query for mobile devices */
+@media only screen and (max-width: 768px) {
+    .hero-img {
+        height: 300px; /* Adjust the height of the hero image for smaller screens */
+    }
+
+    .hero-text {
+        font-size: 40px; /* Reduce the font size for the hero text */
+    }
+
+    .products {
+        padding: 20px 5vw; /* Reduce padding */
+    }
+
+    .product-list {
+        flex-direction: column; /* Stack products vertically */
+        align-items: center;
+    }
+
+    .product-item {
+        width: 80%; /* Increase the width to take up more space on mobile */
+        margin-bottom: 20px; /* Reduce the bottom margin */
+    }
+
+    .product-name {
+        font-size: 1.1em; /* Slightly reduce the font size */
+    }
+
+    .product-price {
+        font-size: 1em; /* Adjust the font size */
+    }
+
+    .add-to-cart {
+        padding: 8px 16px; /* Adjust padding for the button */
+    }
+
+    .modal-content {
+        width: 90%; /* Reduce the width of the modal content */
+    }
+
+    .view-cart {
+        width: 100%; /* Make the button full width */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .cart-product-image {
+        width: 40px; /* Adjust the size of product images in the cart */
+        height: 40px;
+    }
+}
+
 
 
 
